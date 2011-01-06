@@ -1,0 +1,159 @@
+ 
+ 
+ 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+ 
+<!-- DOCTYPE is always recommended. see: http://www.quirksmode.org/css/quirksmode.html --> 
+ 
+<!--
+	This is the jQuery Tools standalone demo, the fastest way to get started.
+	You can freely copy things on your site. All demos can be found here:
+ 
+	http://flowplayer.org/tools/demos/
+ 
+	- css files should not be referenced from flowplayer.org when in production
+ 
+	Enjoy!
+--> 
+ 
+<head> 
+	<meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" /> 
+	<!-- standalone page styling (can be removed)--> 
+	<link rel="stylesheet" type="text/css" href="http://static.flowplayer.org/tools/css/standalone.css"/> 
+ 
+	<title>Apps Slide Show</title> 
+	
+	
+	<!-- Full version of jQuery Tools + jQuery 1.3.2 --> 
+	<script src="http://cdn.jquerytools.org/1.1.2/full/jquery.tools.min.js"></script> 
+	
+</head> 
+ 
+<!-- without body tag IE may have unprodictable behaviours --> 
+<body> 
+ 
+<!-- now that jQuery Tools is included we can begin with the actual demo --> 
+ 
+ 
+ 
+<link rel="stylesheet" type="text/css" href="http://static.flowplayer.org/tools/css/tabs-slideshow.css"/> 
+ 
+ 
+<!-- fix IE "black box" problems with PNG images when opacity is being animated --> 
+ 
+<!--[if IE]>
+<style type="text/css">
+.images img {
+	background:#efefef url(/img/global/gradient/h300.png) repeat-x 0 -22px;
+}
+</style>
+<![endif]--> 
+ 
+ 
+ 
+<!-- "previous slide" button --> 
+<a class="backward">prev</a> 
+ 
+<!-- container for the slides --> 
+<div class="images"> 
+ 
+	<!-- first slide --> 
+	<div> 
+		<h3>iBeauty99</h3> 
+ 
+		<img src="appdemosrc/IMG_1487.PNG" alt="iBeauty99" style="height:87%; float:left; margin:0 30px 20px 0" /> 
+ 
+		<p style="font-weight:bold"> 
+			首創結合 Crowd Sourcing 工人智慧，由Z10團隊開發的Robot自動每日抓取Ptt BBS站-帥哥美女板的板友推薦資料，建立全臺灣第一個「帥哥美女雲端資料庫」
+		</p> 
+ 		
+		<p> &nbsp The FIRST and the ONLY ONE application automatically catch beautiful girls pics real-time and online. <br> &nbsp All pictures of beauties were put into icons in iPhone-like icon pages, provides you the most native and fantastic experience of instantly viewing tons of asian beauties.<br>  <p style="font-weight:bold">Cloud-Combeauty</p>
+		&nbsp All pictures are proved by online users and our special agent, called Cloud-Combeauty, to guarantee the quality of their beauty.
+		</p> 
+ 
+	</div> 
+	
+	<!-- first slide --> 
+	<div> 
+		<h3>iBeauty99</h3> 
+ 
+		<img src="appdemosrc/IMG_1490.PNG" alt="ARBeauty" style="height:87%; float:left; margin:0 30px 20px 0" /> 
+ 
+		<p style="font-weight:bold"> 
+			iBeauty99 with the hottest technology Augmented Reality
+		</p> 
+ 		
+		<p> Finding the beauties surrounding you with your iPhone <br>   
+		&nbsp All pictures are proved by online users and our special agent, called Cloud-Combeauty, to guarantee the quality of their beauty.
+		</p> 
+ 
+	</div>
+ 
+	<!-- second slide --> 
+	<div> 
+		<h3>ARBeauty</h3> 
+ 
+ 
+		<img src="appdemosrc/IMG_1490.PNG" alt="ARBeauty" style="height:87%; float:left; margin:0 30px 20px 0" /> 
+		
+			<p style="font-weight:bold"> 
+				iBeauty99 with the hottest technology Augmented Reality
+			</p> 
+
+			<p> 
+				Finding the beauties surrounding you with you
+			</p>
+	</div> 
+ 
+	<!-- third slide --> 
+	<div> 
+		<h3>Third pane</h3> 
+ 
+		<p style="font-weight:bold"> 
+			Non lectus lacinia egestas. Nulla hendrerit, felis quis elementum viverra, purus felis egestas magna.
+		</p> 
+ 
+		<p> 
+			Aenean elit lorem, pretium vitae dictum in, fermentum consequat dolor. Proin consectetur sollicitudin tellus, non elementum turpis pharetra non. Sed quis tellus quam.
+		</p> 
+	</div> 
+ 
+</div> 
+ 
+<!-- "next slide" button --> 
+<a class="forward">next</a><p> 
+ 
+<!-- the tabs --> 
+<div class="tabs"> 
+	<a href="#"></a> 
+	<a href="#"></a> 
+	<a href="#"></a> 
+</div> 
+ 
+<div style="clear:both;margin:30px 0;text-align:center;padding-right:40px"> 
+ 
+<button onClick='$("div.tabs").tabs().play();'>Play</button> 
+<button onClick='$("div.tabs").tabs().stop();'>Stop</button> 
+</div> 
+ 
+ 
+<script language="JavaScript"> 
+// What is $(document).ready ? See: http://flowplayer.org/tools/using.html#document_ready
+$(function() {
+	
+	$("div.tabs").tabs(".images > div", {
+ 
+		// enable "cross-fading" effect
+		effect: 'fade',
+		fadeOutSpeed: "slow",
+ 
+		// start from the beginning after the last tab
+		rotate: true
+ 
+	// use the slideshow plugin. It accepts its own configuration
+	}).slideshow();
+});
+</script> 
+ 
+</body>

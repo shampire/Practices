@@ -1,0 +1,76 @@
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 0.9em;
+}
+
+p {
+  line-height: 1.5em;
+}
+
+ul.menu, ul.menu ul {
+  list-style-type:none;
+  margin: 0;
+  padding: 0;
+  width: 15em;
+}
+
+ul.menu a {
+  display: block;
+  text-decoration: none;	
+}
+
+ul.menu li {
+  margin-top: 1px;
+  border-top: 1px dashed #3e0cc0;
+}
+
+ul.menu li a {
+  background: #fff;
+  color: #4100eb;	
+  padding: 0.5em;
+}
+
+ul.menu li a:hover {
+  background: #eae3fd;
+}
+
+ul.menu li ul li {
+	border-top:0px;
+}
+ul.menu li ul li a {
+  background: #76a900;;
+  color: #0f23d2;
+  padding-left: 20px;
+}
+ul.menu li ul li ul li a {
+  background: #0000ff;
+  color: #0f23d2;
+  padding-left: 35px;
+}
+ul.menu li ul li ul li ul li a {
+  background: #ffa900;
+  color: #0f23d2;
+  padding-left: 50px;
+}
+
+
+ul.menu li ul li a:hover {
+  background: #b3a3ff;
+  border-left: 20px #bda3ff solid; /* the boder will increase so padding need to decrease. Otherwise, it looks not neat and tidy.*/
+  padding-left: 0px;
+  color:#fff;
+}
+
+ul.menu li ul li ul li a:hover {
+  background: #b3a3ff;
+  border-left: 35px #bda3ff solid; /* the boder will increase so padding need to decrease. Otherwise, it looks not neat and tidy.*/
+  padding-left: 0px;
+  color:#fff;
+}
+
+ul.menu li ul li ul li ul li a:hover {
+  background: #b3a3ff;
+  border-left: 50px #bda3ff solid; /* the boder will increase so padding need to decrease. Otherwise, it looks not neat and tidy.*/
+  padding-left: 0px;
+  color:#fff;
+}

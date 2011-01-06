@@ -1,0 +1,49 @@
+#sortable li {
+}
+
+#sortable li.normal {
+    border-left: 5px solid #eee;
+    border-right: 5px solid #eee;
+    border-top: 5px solid #eee;
+    border-bottom: 5px solid #eee;
+    padding: 20px 24px;
+    font-family: "Trebuchet MS", "Helvetica", "Arial",  "Verdana", "sans-serif";
+    margin: 3px 3px 3px 0; padding: 1px; float: left; width: 300px; height: 300px; font-size: 4em; text-align: center; 
+}
+
+#sortable li.enlarged {
+    border-left: 5px solid #eee;
+    border-right: 5px solid #eee;
+    border-top: 5px solid #eee;
+    border-bottom: 5px solid #eee;
+    padding: 20px 24px;
+    font-family: "Trebuchet MS", "Helvetica", "Arial",  "Verdana", "sans-serif";
+    margin: 3px 40px 3px 0; padding: 1px; float:right ; width: 500px; height: 500px; font-size: 4em; text-align: center; 
+}
+
+#sortable li.shrinked {
+    border-left: 5px solid #eee;
+    border-right: 5px solid #eee;
+    border-top: 5px solid #eee;
+    border-bottom: 5px solid #eee;
+    padding: 20px 24px;
+    font-family: "Trebuchet MS", "Helvetica", "Arial",  "Verdana", "sans-serif";
+    margin: 3px 3px 3px 0px; padding: 1px; float:left ; width: 150px; height: 150px; font-size: 4em; text-align: center; 
+}
+
+#sortable { list-style-type: none; margin: 0; padding: 20; }
+body {
+    max-width: 780px;
+    max-height:450px;
+}
+
+#left {
+    max-width: 170px;
+}
+#right {
+    float: right;margin-left:230px;
+    position: absolute;
+    left:0px;
+}
+
+

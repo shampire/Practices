@@ -1,0 +1,44 @@
+application: appworkdemotmp
+version: 5
+runtime: python
+api_version: 1
+
+handlers:
+
+- url: /slides
+  static_files: static/slides.html
+  upload: static/slides.html
+- url: /src
+  static_dir: static/src
+- url: /robots.txt
+  static_files: static/robots.txt
+  upload: static/robots.txt
+- url: /sitemap.xml
+  static_files: static/sitemap.xml
+  upload: static/sitemap.xml
+- url: /
+  static_files: static/index.html
+  upload: static/index.html
+- url: /css
+  static_dir: static/css
+- url: /images
+  static_dir: static/images
+- url: /src
+  static_dir: static/Lab
+- url: /ibeauty99
+  static_files: static/ibeauty99/ibeauty99.html
+  upload: static/ibeauty99/ibeauty99.html
+- url: /ibeauty99src
+  static_dir: static/ibeauty99/src
+- url: /beauty
+  static_files: static/beauty/beauty.html
+  upload: static/beauty/beauty.html
+- url: /beautysrc
+  static_dir: static/beauty/src
+- url: /appdemo
+  static_files: static/appdemo/slideshow.html
+  upload: static/appdemo/slideshow.html
+- url: /appdemosrc
+  static_dir: static/appdemo/appdemosrc
+- url: .*
+  script: main.py

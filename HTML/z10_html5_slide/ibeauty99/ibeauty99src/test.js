@@ -1,0 +1,3 @@
+var xyz,zzz;
+function aa(){$.ajax({url:"getBeautyList",error:function(a){$("#msg").html("getBeautyList error")},success:function(a){a=a.split("\n");xyz=new Array(a.length);zzz=new Array(a.length);for(j=0;j<8;j++){var b="";for(i=0+j*60;i<60+j*60;i+=2){xyz[i]=a[i].split(" ")[0];zzz[i]=a[i].split(" ")[3];b=b.concat("<a style='text-decoration: none; border: none;' href='"+zzz[i]+"'><img class='beauty' src='http://testforbabyupload.appspot.com/Image?index="+xyz[i]+
+"'/></a>")}$("#msg").html("beauties:240");$("#test"+parseInt(j,10)).html("".concat('<section style="width: 97%;">',b,"</section>"))}}})};

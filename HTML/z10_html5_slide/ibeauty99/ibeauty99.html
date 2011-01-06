@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<!-- 
+  Copyright 2010 Bob Wei
+  All rights reserved.
+  Adopted from Google
+-->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    <title>iBeauty99</title>
+    
+    
+		<script src="ibeauty99src/test.js"></script>
+	    <script src="http://www.google.com/jsapi?key=ABQIAAAAL77BJh0Qg3osCgjYJ32M1RT4dXobCtCyvBTh1wSTPcoKdulIaRTxcxgBZQ5Z4laPFCoL_riRvMKS1A"></script>
+	    <script>
+				
+				google.load("jquery", "1.4.2");
+				google.setOnLoadCallback(function(){
+					aa();
+				});
+	</script>
+
+    <script type="text/javascript">
+	var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+	document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+	</script>
+	<script type="text/javascript">
+	try {
+	var pageTracker = _gat._getTracker("UA-12121295-5");
+	pageTracker._trackPageview();
+	} catch(err) {}</script>
+    
+    <link type="text/css" href="ibeauty99src/ibeauty99.css" rel="stylesheet">
+  </head><body>
+    <div class="presentation">
+      <div class="slides">
+	<!-- Bob's test slides-->
+		<style>
+		
+		</style>
+			<!--<div class="slide" ><img src="ibeauty99src/cover.png"></div>-->
+			<div class="slide" id="test0"></div>
+			<div  class="slide" id="test1"></div>
+			<div  class="slide" id="test2"></div>
+			<div  class="slide" id="test3"></div>
+			<div  class="slide" id="test4"></div>
+			<div  class="slide" id="test5"></div>
+			<div  class="slide" id="test6"></div>
+			<div  class="slide" id="test7"></div>
+			<!--<div  class="slide" id="test8"></div>
+			<div  class="slide" id="test9"></div>
+			<div  class="slide" id="test10"></div>-->
+			
+	<!-- Bob's test slides-->
+	
+       
+      
+        
+		<div id="msg"></div>
+		<fb:like href="http://www.bobwei.net/ibeauty99" layout="button_count" show_faces="true" width="80" action="like" colorscheme="light" style="float: buttom" />
+		<div id="statusMsg"></div>
+		<div></div>
+		
+		<!--Facebook-->
+		
+		<!--
+		<fb:live-stream app_id="aa8f64ff4b9dd31e1d32c2581a06d597" width="300" height="500" />-->
+		<div id="fb-root"></div>
+		
+		<script src="http://connect.facebook.net/en_US/all.js"></script>
+		<script>
+		function initFBSDK(){
+			FB.init({appId: 'aa8f64ff4b9dd31e1d32c2581a06d597', status: true, cookie: true, xfbml: true});
+			  FB.Event.subscribe('auth.sessionChange', function(response) {
+			    if (response.session) {
+			      // A user has logged in, and a new cookie has been saved
+					$('statusMsg').html('fb success');
+			    } else {
+			      // The user has logged out, and the cookie has been cleared
+					$('statusMsg').html('fb fail');
+			    }
+			  });
+		}
+		 initFBSDK(); 
+		</script>
+		<!--Facebook-->
+      </div> <!-- slides -->
+       
+    </div> <!-- presentation -->
+    
+    <script>
+      (function() {
+        var currentSlideNo;
+        var notesOn = false;
+        var slides = document.getElementsByClassName('slide');
+        var touchStartX = 0;     
+   
+        // var slide_hash = window.location.hash.replace(/#/, '');
+        // if (slide_hash) {
+        //   for (var i = 0, len = slides.length; i < len; i++) {
+        //     if (slides[i].id == slide_hash) {
+        //       currentSlideNo = i;
+        //       updateSlideClasses(); 
+        //     }
+        //   }
+        // }
+        
+        var spaces = /\s+/, a1 = [""];
+
+        var str2array = function(s) {
+          if (typeof s == "string" || s instanceof String) {
+            if (s.indexOf(" ") < 0) {
+              a1[0] = s;
+              return a1;
+            } else {
+              return s.split(spaces);
+            }
+          }
+          return s;
+        };
+
+        var trim = function(str) {
+          return str.replace(/^\s\s*/, '').replace(/\s\s*$/, '');
+        }
+
+        var addClass = function(node, classStr) {
+          classStr = str2array(classStr);
+          var cls = " " + node.className + " ";
+          for (var i = 0, len = classStr.length, c; i < len; ++i) {
+            c = classStr[i];
+            if (c && cls.indexOf(" " + c + " ") < 0) {
+              cls += c + " ";
+            }
+          }
+          node.className = trim(cls);
+        }
+
+        var removeClass = function(node, classStr) {
+          var cls;
+          if (classStr !== undefined) {
+            classStr = str2array(classStr);
+            cls = " " + node.className + " ";
+            for (var i = 0, len = classStr.length; i < len; ++i) {
+              cls = cls.replace(" " + classStr[i] + " ", " ");
+            }
+            cls = trim(cls);
+          } else {
+            cls = "";
+          }
+          if (node.className != cls) {
+            node.className = cls;
+          }
+        }
+
+        var initialize = function() {
+          if (window.location.hash != "") {
+            currentSlideNo = Number(window.location.hash.replace('#slide', ''));
+          } else {
+            currentSlideNo = 1;
+          }
+   
+          document.addEventListener('keydown', handleBodyKeyDown, false);
+   
+          var els = slides;
+          for (var i = 0, el; el = els[i]; i++) {
+            addClass(el, 'slide far-future');
+          }
+          updateSlideClasses(); 
+
+          // add support for finger events (filter it by property detection?)
+          addTouchListeners();
+        }
+
+        var getSlideEl = function(slideNo) {
+          if (slideNo > 0) {
+            return slides[slideNo - 1];
+          } else {
+            return null;
+          }
+        }
+
+        var getSlideTitle = function(slideNo) {
+          var el = getSlideEl(slideNo);
+          
+          if (el) {
+            return el.getElementsByTagName('header')[0].innerHTML;
+          } else {
+            return null;
+          }
+        }
+        
+        var changeSlideElClass = function(slideNo, className) {
+          var el = getSlideEl(slideNo);
+
+          if (el) {
+            removeClass(el, 'far-past past current future far-future');
+            addClass(el, className);
+          }
+        }
+        
+        var updateSlideClasses = function() {
+          window.location.hash = "slide" + currentSlideNo;
+          changeSlideElClass(currentSlideNo - 2, 'far-past');
+          changeSlideElClass(currentSlideNo - 1, 'past');
+          changeSlideElClass(currentSlideNo, 'current');
+          changeSlideElClass(currentSlideNo + 1, 'future');
+          changeSlideElClass(currentSlideNo + 2, 'far-future');                
+        }
+        
+        var nextSlide = function() {
+          if (currentSlideNo < slides.length) {
+            currentSlideNo++;
+          }
+          
+          updateSlideClasses();
+        }
+        
+        var prevSlide = function() {
+          if (currentSlideNo > 1) {
+            currentSlideNo--;
+          }
+          updateSlideClasses();
+        }
+        
+        var showNotes = function() {
+          var notes = document.querySelectorAll('.notes');
+          for (var i = 0, len = notes.length; i < len; i++) {
+            notes[i].style.display = (notesOn) ? 'none':'block';
+          }
+          notesOn = (notesOn) ? false:true;
+        }
+
+        var switch3D = function() {
+          if (document.body.className.indexOf('three-d') == -1) {
+            document.getElementsByClassName('presentation')[0].style.webkitPerspective = '1000px';
+            document.body.className += ' three-d';
+          } else {
+            window.setTimeout("document.getElementsByClassName('presentation')[0].style.webkitPerspective = '0';", 2000);
+            document.body.className = document.body.className.replace(/three-d/, '');
+          }
+        }
+
+        var handleBodyKeyDown = function(event) {
+          // console.log(event.keyCode);
+          switch (event.keyCode) {
+            case 37: // left arrow
+              prevSlide();
+              break;
+            case 39: // right arrow
+            // case 32: // space
+              nextSlide();
+              break;
+            case 50: // 2
+              showNotes();          
+              break;
+            case 51: // 3
+              switch3D();          
+              break;
+          }
+        }
+
+        var addTouchListeners = function() {
+          document.addEventListener('touchstart', function(e) {
+            touchStartX = e.touches[0].pageX;
+          }, false);
+          document.addEventListener('touchend', function(e) {
+            var pixelsMoved = touchStartX - e.changedTouches[0].pageX;
+            var SWIPE_SIZE = 150;
+            if (pixelsMoved > SWIPE_SIZE) {
+              nextSlide();
+            }
+            else if (pixelsMoved < -SWIPE_SIZE) {
+             prevSlide();
+            }
+          }, false);
+        };
+
+        initialize();
+      })();
+    </script>
+	<a href="http://SiteStates.com" title="站長工具">
+	    <img src="http://SiteStates.com/show/image/17622.jpg" border="0" style="disply: none;"/>
+	</a>
+</body>
+</html>

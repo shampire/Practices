@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<!-- 
+  Copyright 2010 Google Inc.
+  All rights reserved.
+  Original slides: Marcin Wichary (mwichary@google.com)
+  Modifications: Ernest Delgado (ernestd@google.com)
+                 Alex Russell (slightlyoff@chromium.org)
+-->
+<!-- 
+  Adopted by Bob Wei (bob61016@gmail.com) from Google
+-->
+<!--<html manifest="/html5/src/slides_manifest.php">-->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    <title>HTML5 slides</title>
+    <script src="src/slidesControl.js"></script>
+    <script src="http://www.google.com/jsapi?key=ABQIAAAAL77BJh0Qg3osCgjYJ32M1RT4dXobCtCyvBTh1wSTPcoKdulIaRTxcxgBZQ5Z4laPFCoL_riRvMKS1A"></script>
+    <script>google.load("jquery", "1.4.2");</script>
+
+    <script type="text/javascript">
+	    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    	document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+	</script>
+	
+    <script type="text/javascript">
+	    try {
+    	    var pageTracker = _gat._getTracker("UA-12121295-6");
+	        pageTracker._trackPageview();
+    	} catch(err) {}
+    </script>
+    
+    <link type="text/css" href="src/slides.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="presentation">
+      <div class="slides">
+	<!-- Bob's test slides-->
+		<!--slide starting point-->
+		<div class="slide">  
+			<section class="center intro">
+				<h1 id="testTittle" >HTML5 slides</h1>
+				<p>Press <span class="key">→</span> to advance.</p>
+				<p id="myName" style="font-size: 20px">adopted by <a href="http://bobwei.net/">Bob Wei</a> from  <a href="http://apirocks.com/html5/html5.html">Google</a></p></p>
+				
+				 <script>
+		            //function changeWeb20() {
+		              var eel = document.getElementById('myName');
+		              eel.style.webkitBoxReflect = 'below 3px -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(255, 255, 255, ' + '0.45' + ')))';
+		
+		           // }
+		          </script>
+					
+			</section>
+		</div>
+		<!--slide ending point-->
+		
+		 <div class="slide">
+			<header><h1>Who is Z10?</h1></header>
+			<section>
+				<ul class="bullets">
+					<img style='width: 60%; margin: 30px auto; float: right; -webkit-box-shadow: 6px 6px 15px #777; -webkit-border-radius: 10px;' src='src/z10_4.jpg' />
+				<li><a href="http://bobwei.net/">Bob Wei</a></li>
+				<li>dab</li>
+				<li>ozkkdre</li>
+				<li>modcarl</li>
+				<li>selena.tsai</li>
+				
+			</section>
+			
+		</div>
+		<div class="slide">
+			<header>Bob Wei</header>
+			<section>
+				<style>
+				  span.year {
+					display: inline-block;
+					text-align: right;
+					width: 120px;
+					letter-spacing: -2px;
+					padding-right: 10px;
+				  }
+				  hr {
+					visibility: hidden;
+					padding: 0;
+					margin: 0 0 -20px 0;
+				  }
+				</style>
+				<ul class="bullets">
+					<img style='width: 30%; margin: 30px auto; float: right; -webkit-box-shadow: 6px 6px 15px #777; -webkit-border-radius: 10px;' src='src/bob_2.png' />
+					<li>Programming Skills</li>
+					<ul class="summary">
+						<li>General:</li>
+							<ul>C/C++/Objective-C, Java</ul>
+						<li>Mobile Programming:</li>
+							<ul>iPhone, Android</ul>
+						<li>Web Technology:</li>
+							<ul>HTML5, CSS3, Javascript(jQuery)</ul>
+							<ul>Google App Engine(Python)</ul>				
+					</ul>
+					<li>My Works:</li>
+					<ul>
+					<a href="http://ibeauty99.com/"><img style='-webkit-box-shadow: 6px 6px 15px #777; -webkit-border-radius: 10px;' src='src/ibeauty99.png' align='middle' /></a></ul>
+				</ul>
+				</div>
+		<div class="slide">
+			<header>Selena Tsai</header>
+			<section>
+				<style>
+				  span.year {
+					display: inline-block;
+					text-align: right;
+					width: 120px;
+					letter-spacing: -2px;
+					padding-right: 10px;
+				  }
+				  hr {
+					visibility: hidden;
+					padding: 0;
+					margin: 0 0 -20px 0;
+				  }
+				</style>
+				<ul class="bullets">
+					<img style='width: 30%; margin: 30px auto; float: right; -webkit-box-shadow: 6px 6px 15px #777; -webkit-border-radius: 10px;' src='src/selena.png' />
+					<li>Programming Skills</li>
+					<ul class="summary">
+						<li>General:</li>
+							<ul>C/C++/Objective-C</ul>
+						<li>Mobile Programming:</li>
+							<ul>iPhone</ul>
+						<li>Web Technology:</li>
+							<ul>Silverlight, Google App Engine(Python)</ul>						
+					</ul>
+					<li>My Works:</li>
+					<ul>
+					<a href="http://www.books.com.tw/exep/prod/booksfile.php?item=0010413003"><img style='width: 70%; float: left; -webkit-box-shadow: 6px 6px 15px #777; -webkit-border-radius: 10px;' src='src/r1.png' align='middle' /></a></ul>
+					</ul>
+		  </section>
+		</div>
+	<!-- Bob's test slides-->
+	<input id="syncBtn" type=button onclick="syncSlides();" value="Sync Slides"/><br>
+	<input id="syncPwd" value="" size=10/>
+	<div id="msg"></div>
+	<div id="statusMsg"></div>
+       
+    </div> <!-- presentation -->
+    
+    <script type="text/javascript" src="slide.js"></script>
+	
+</body>
+<a href="http://SiteStates.com" title="站長工具">
+    <img src="http://SiteStates.com/show/image/17611.jpg" border="0" style="disply: none;" />
+</a>
+</html>
