@@ -1,0 +1,9 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+[remote "origin"]
+	url = ssh://modcarl@140.112.29.205:29418/android-llvm/libbcc.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "default"]
+	remote = origin
+	merge = refs/heads/master
